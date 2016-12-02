@@ -6,7 +6,6 @@ Test automation for native Android apps with AutoIt and ImperiusGeorge.
 
 Please submit issues to *ohtejera/ImperiusAutoIt* and pull requests to *-dev branches.
 
-![gauchoiwantyou2w](https://cloud.githubusercontent.com/assets/3797402/6205550/11ec108e-b559-11e4-8496-60e99d953dec.gif)
 
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
