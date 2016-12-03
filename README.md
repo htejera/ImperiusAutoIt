@@ -1,13 +1,13 @@
-![logo](https://cloud.githubusercontent.com/assets/3797402/20856814/0f10d210-b8f8-11e6-84ec-6e03f5072561.png) 
+![logo](https://cloud.githubusercontent.com/assets/3797402/20860319/f751422a-b953-11e6-94a5-0fb02dca0ce8.png)
 
 # ImperiusAutoIt
-Test automation for native Android apps with AutoIt and ImperiusGeorge.
 
-![sample](https://cloud.githubusercontent.com/assets/3797402/20856815/18bfe1e8-b8f8-11e6-98c0-d1f71c2ee2fe.gif)
+Imperius AutoIt is an ImperiusGeorge client for mobile test automation that support native Android apps. Tests are written using AutoIt, that's it!
+
 
 ## Contribution Guidelines
 
-Please submit issues to *ohtejera/ImperiusAutoIt* and pull requests to *-dev branches.
+Please submit issues to [Issues](https://github.com/ohtejera/ImperiusAutoIt/issues) and pull requests to *-dev branches*.
 
 
 ## License
