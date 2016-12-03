@@ -2,7 +2,7 @@
 
 # ImperiusAutoIt
 
-Imperius AutoIt is an ImperiusGeorge client for mobile test automation that support native Android apps. Tests are written using AutoIt, that's it!
+Imperius [AutoIt](https://www.autoitscript.com/site/) is an [ImperiusGeorge](https://github.com/lookout/ImperiusGeorge) client for mobile test automation that support native Android apps. Tests are written using AutoIt, that's it!
 
 
 ## Contribution Guidelines
