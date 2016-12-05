@@ -8,5 +8,5 @@ build: off
 
 test_script:
   - git submodule update --init
-  - cd tests
-  - autoit3 /ErrorStdOut /AutoIt3ExecuteScript imperius.tests.au3 ci
+  - cd test
+  - autoit3 /ErrorStdOut /AutoIt3ExecuteScript imperius.test.au3 ci
