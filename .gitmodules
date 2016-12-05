@@ -1,0 +1,10 @@
+[submodule "AutoItObject"]
+	path = lib/vendor/AutoItObject
+	url = git://github.com/AutoItMicro/AutoItObject.git
+	branch = master
+[submodule "AutoItAppveyor"]
+	path = lib/vendor/AutoItAppveyor
+	url = git://github.com/AutoItMicro/AutoItAppveyor.git
+[submodule "MicroUnitTestingFramework"]
+	path = lib/vendor/Micro
+	url = git://github.com/AutoItMicro/MicroUnitTestingFramework.git
