@@ -7,6 +7,6 @@ init:
 build: off
 
 test_script:
-  - git submodule update --init
+  - git submodule update --init --recursive
   - cd test
   - autoit3 /ErrorStdOut /AutoIt3ExecuteScript imperius.test.au3 ci
