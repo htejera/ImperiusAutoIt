@@ -8,6 +8,7 @@ Global $aParams[5] = ["127.0.0.1", 3007, "123456", "C:\folder\" & $IMPERIUSSERVE
 
 #Region Suite
 Local $oTestSuite = newTestSuite("Imperius")
+$oTestSuite.ci = True
 $oTestSuite.addTest(TestImperiusServerGetters())
 $oTestSuite.addTest(TestUIDeviceGetters())
 $oTestSuite.addTest(TestLoggerLevels())

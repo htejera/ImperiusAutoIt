@@ -8,3 +8,6 @@
 [submodule "MicroUnitTestingFramework"]
 	path = lib/vendor/Micro
 	url = git://github.com/AutoItMicro/MicroUnitTestingFramework.git
+[submodule "lib/vendor/micro"]
+	path = lib/vendor/micro
+	url = git://github.com/AutoItMicro/MicroUnitTestingFramework.git
