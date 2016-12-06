@@ -358,7 +358,7 @@ Local $oLogger3 = Logger("MyFile.log")
 $oLogger3.info("INFO")
 </code></pre></div><br/>
 <h3 align="left"> Basic Usages</h3><hr>
-<p class="pep">This section show the normal actions of the device through some simple examples. This section is light on details, you can find a more detailed explanation about each function by reading the <a href="docs/index.html">API documentation</a>. <br/>
+<p class="pep">This section show the normal actions of the device through some simple examples. This section is light on details, you can find a more detailed explanation about each function by reading the <a href="docs/index.html">API documentation</a> and check more examples <a href="https://github.com/ohtejera/ImperiusAutoIt/tree/master/examples">here</a>.<br/>
 <b class="lil"> Retrieve the device info </b></p>
 <div class="cod">
 <pre><code class="autoit">#include &lt;imperius.au3&gt;
