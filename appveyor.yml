@@ -1,6 +1,12 @@
-version: 1.9.alpha.{build}
+version: 1.0.beta.{build}
 
+branches:
+  only:
+    - master
 
+  except:
+    - gh-pages
+    
 init:
   - cinst autoit.commandline
 
