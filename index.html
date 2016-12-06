@@ -1,0 +1,568 @@
+<html><head>
+        <meta name="keywords" content="AutoIt, Android, Automation, Testing, Imperius,Software,Programing">
+        <meta name="description" content="Test automation for native Android apps with AutoIt and ImperiusGeorge.">
+        <title>ImperiusAutoit</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--[if lte IE 8]>
+            <script src="assets/js/ie/html5shiv.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="assets/css/ie8.css" />
+        <![endif]-->
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" href="assets/css/ie9.css" />
+        <![endif]-->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/manifest.json">
+	<link rel="stylesheet" href="assets/highlight/styles/railscasts.css">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head><body>
+        <!-- Header -->
+        <div id="header">
+            <div class="top">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1 id="title">Imperius AutoIt</h1>
+                    <p>Android automation</p>
+                </div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="#top" id="top-link" class="skel-layers-ignoreHref">Intro</a>
+                        </li>
+                        <li>
+                            <a href="#started" id="portfolio-link" class="skel-layers-ignoreHref">Getting started</a>
+                        </li>
+                        <li>
+                            <a href="#api" id="portfolio-link" class="skel-layers-ignoreHref">API Docs</a>
+                        </li>
+                        <li>
+                            <a href="#contributing" id="about-link" class="skel-layers-ignoreHref">Contributing</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bottom">
+                <!-- Icons -->
+                <ul class="icons">
+                    <li>
+<a class="github-button" href="https://github.com/ohtejera/imperiusautoit/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/ohtejera/imperiusautoit#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue ohtejera/imperiusautoit on GitHub">Issue</a>
+                    </li>
+                    <li>
+<a class="github-button" href="https://github.com/ohtejera/imperiusautoit/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/ohtejera/imperiusautoit/network" data-count-api="/repos/ohtejera/imperiusautoit#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork ohtejera/imperiusautoit on GitHub">Fork</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Main -->
+        <div id="main">
+            <!-- Intro -->
+            <section id="top" class="one dark cover">
+                <div class="container">
+                    <header>
+                        <h2 class="alt text-primary">Imperius AutoIt</h2>
+                        <p class="text-center text-primary">
+                            <b>Imperius AutoIt</b> is an
+                            <a href="https://github.com/lookout/ImperiusGeorge">ImperiusGeorge</a> client for mobile test automation that support native Android apps. Tests
+                            are written using <a href="https://www.autoitscript.com/site/">AutoIt</a>, that's it!</p>
+                        <div class="col-md-12">
+                            <img src="images/logo.png" class="center-block img-responsive">
+                        </div>
+                    </header>
+                    <div class="row text-center">
+
+                    </div>
+                    <footer>
+                        <a href="#intro" class="button scrolly">Download</a>
+                    </footer>
+                </div>
+            </section>
+
+            <!-- Getting Started -->
+            <section id="started" class="two">
+                <div class="container">
+                    <header>
+                        <h2>Getting started</h2>
+                    </header>
+		    <h3 align="left">Prerequisites</h3><hr>
+		   <ol>
+			<li><b class="lil">1.</b> Latest <a href="https://developer.android.com/studio/index.html#downloads">Android-SDK</a> must be installed and <b>ANDROID_HOME</b> set. If detailed instructions are needed, have a look at this <a href="http://spring.io/guides/gs/android/">guide</a>.</li>	
+			<li><b class="lil">2.</b> Connect a physical Android device or start an emulator. After connecting the device to the computer, make sure to  <a href="https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm">enable USB debugging.</a></li>
+<li><b class="lil">3.</b> Please make sure the device has no screen lock configured. </li>
+			<li><b class="lil">4.</b> <a href="https://github.com/lookout/ImperiusGeorge">ImperiusGeorge</a> works on Android 4.1+, so before using it, make sure your device is <b>Android4.1+</b></li>
+
+		   </ol>    
+  
+		    <h3 align="left">Application under test</h3><hr>
+		    <ol>	
+			<li>You shouldn’t have to modify your app in any way in order to automate it.</li>
+	    		<li>If you want to play around with <b>Imperius AutoIt</b>, you can use our <a href"">ImperiusGeorge.apk.</a> You will need <a href="https://apkpure.com/how-to-install-apk.html">allow apps to install from unknown</a> sources on device settings.</li>
+		    </ol>
+		    <h3 align="left">Writing a simple test</h3><hr>
+		    <p class="pep">Download the latest version and navigate to the folder where you downloaded <b>Imperius AutoIt</b> and create the <b class="lil">mytest.au3</b> file with this content and <a href="https://www.autoitscript.com/autoit3/docs/intro/running.htm">run</a> the script:</p>
+			<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+
+Local $sAUTPath = "ImperiusGeorge.apk"
+Local $sPackage = "appinventor.ai_henrytejera.ImperiusGeorge"
+Local $sActivity = ".Screen1"
+
+;Local $sDeviceId = "" If multiple emulator/device instances are running, you must specify a serial device id.
+Local $oImperius = ImperiusServer("127.0.0.1", 3007)
+Local $oLogger = $oImperius.getLogger(); This object allows you to log messages to the STDOUT stream and on a file, with different log levels.
+Local $oDevice = $oImperius.getDevice(); UiDevice provides access to state information about the device and simulate user actions.
+$oImperius.start() ;Start a HTTP server (ImperiusGeorge) on the device, on port 3007.
+
+$oImperius.getAdb().install($sAUTPath) ;Install the application under test through the ADB client.
+$oDevice.startActivity($sPackage, $sActivity) ;Start the app under test.
+
+$oLogger.info("Dump:" & $oDevice.getDump() )
+$oDevice.waitForTextExist("AutoIt client")
+$oDevice.clickAndWait("Inputs Screen")
+$oDevice.enterText("0", "Imperius")
+$oDevice.enterText("1", "Password")
+$oDevice.click("Add")
+$oDevice.waitForTextExist("Ready")
+$oDevice.getScreenshot("InputScreen.png")
+$oDevice.pressBack()
+$oDevice.click("Back")
+$oDevice.clearPackage($sPackage)
+$oImperius.getAdb().uninstall($sPackage)
+
+$oImperius.stop()
+$oImperius = 0</code></pre></div><br/>
+<p class="pep">Let's look at the execution of this script on a real device:</p>
+<p class="pep"><img class="gif" src="images/sample.gif" alt=""></p>
+<p class="pep">You might want to take a closer look at the script you are executing. This is the execution log:
+</p>
+<div class="cod">
+<pre><code class="bash">[2016-12-03 00:06:06.636 INFO ] [ADB] Run command:adb start-server. Result:
+[2016-12-03 00:06:06.714 INFO ] [ADB] Run command:adb  shell "if [ -e \"/data/local/tmp/imperiusserver.1.0.1.jar\" ]; then echo \"Found\"; else echo \"Not Found\"; fi". Result:Found
+[2016-12-03 00:06:06.764 INFO ] [ADB] Run command:adb  push "C:\imperius\examples\simple\imperiusserver.1.0.1.jar" "/data/local/tmp/imperiusserver.1.0.1.jar". 
+[2016-12-03 00:06:06.812 INFO ] [ADB] Run command:adb  forward tcp:3007 tcp:3007. Result:
+[2016-12-03 00:06:07.870 INFO ] [ADB] Run command:adb  shell "uiautomator runtest imperiusserver.1.0.1.jar -c imperiusgeorge.TestServer -e port 3007". Result:INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+imperiusgeorge.TestServer:
+INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+INSTRUMENTATION_STATUS: test=testAndroidServer
+INSTRUMENTATION_STATUS: class=imperiusgeorge.TestServer
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+[2016-12-03 00:06:14.196 INFO ] [ADB] Run command:adb  install "../ImperiusGeorge.apk". Result:	pkg: /data/local/tmp/ImperiusGeorge.apk
+Success
+4882 KB/s (1775940 bytes in 0.355s)
+[2016-12-03 00:06:15.561 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=shell&args=["am start appinventor.ai_henrytejera.ImperiusGeorge/.Screen1"] Response: "Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=appinventor.ai_henrytejera.ImperiusGeorge\/.Screen1 }\n"
+[2016-12-03 00:06:18.319 INFO ] [UiDevice] URL: http://127.0.0.1:3007/dump Response: {"pkg":"","buttons":["Inputs Screen","Spinner Screen","List picker Screen","Time picker Screen"],"activity_name":null,"screenshot_location":"\/sdcard\/2016-12-03_00-03-31.png","logs":"[\"Starting server on port 3007\",\"parsing args-string: [\\\"am start appinventor.ai_henrytejera.ImperiusGeorge\\\/.Screen1\\\"] became: [\\\"am start appinventor.ai_henrytejera.ImperiusGeorge\\\\\\\/.Screen1\\\"]\",\"running method 'shell' on static class class imperiusgeorge.UIHelp\",\"returning Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=appinventor.ai_henrytejera.ImperiusGeorge\\\/.Screen1 }\\n of package java.lang\",\"Creating dump of views\"]","text_views":["ImperiusGeorge","ImperiusGeorge","AutoIt client"]}
+[2016-12-03 00:06:18.320 INFO ] Dump:{"pkg":"","buttons":["Inputs Screen","Spinner Screen","List picker Screen","Time picker Screen"],"activity_name":null,"screenshot_location":"\/sdcard\/2016-12-03_00-03-31.png","logs":"[\"Starting server on port 3007\",\"parsing args-string: [\\\"am start appinventor.ai_henrytejera.ImperiusGeorge\\\/.Screen1\\\"] became: [\\\"am start appinventor.ai_henrytejera.ImperiusGeorge\\\\\\\/.Screen1\\\"]\",\"running method 'shell' on static class class imperiusgeorge.UIHelp\",\"returning Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=appinventor.ai_henrytejera.ImperiusGeorge\\\/.Screen1 }\\n of package java.lang\",\"Creating dump of views\"]","text_views":["ImperiusGeorge","ImperiusGeorge","AutoIt client"]}
+[2016-12-03 00:06:18.389 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=waitUntilExactTextExists&args=[["AutoIt client"], 30000] Response: "AutoIt client"
+[2016-12-03 00:06:19.233 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=clickAndWaitForNewWindow&args=["Inputs Screen"] Response: ""
+[2016-12-03 00:06:23.318 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=enterText&args=[0, "Imperius"] Response: ""
+[2016-12-03 00:06:27.249 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=enterText&args=[1, "Password"] Response: ""
+[2016-12-03 00:06:30.943 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=clickIfExactExists&args=["Add"] Response: true
+[2016-12-03 00:06:31.038 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=waitUntilExactTextExists&args=[["Ready"], 30000] Response: "Ready"
+[2016-12-03 00:06:32.028 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=getScreenshot&args=[] Response: "\/sdcard\/2016-12-03_00-03-47.png"
+[2016-12-03 00:06:32.117 INFO ] [ADB] Run command:adb  pull "/sdcard/2016-12-03_00-03-47.png" "InputScreen.png". Result:2919 KB/s (119645 bytes in 0.040s)
+[2016-12-03 00:06:32.191 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=shell&args=["rm /sdcard/2016-12-03_00-03-47.png"] Response: ""
+[2016-12-03 00:06:33.198 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=shell&args=["input keyevent 4"] Response: ""
+[2016-12-03 00:06:36.869 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=clickIfExactExists&args=["Back"] Response: true
+[2016-12-03 00:06:38.098 INFO ] [UiDevice] URL: http://127.0.0.1:3007/execute?on=imperiusgeorge.UIHelp&method=shell&args=["pm clear appinventor.ai_henrytejera.ImperiusGeorge"] Response: ""
+[2016-12-03 00:06:40.934 INFO ] [ADB] Run command:adb  uninstall appinventor.ai_henrytejera.ImperiusGeorge. Result:Success</code></pre></div><br/>
+
+<h3 align="left">How it Works</h3><hr>
+<p class="pep"><b class="lil">Client/Server Architecture</b><br/>
+<b>ImperiusGeorge</b> is a Web Server that exposes a HTTP API. It receives connections from the AutoIt client, listens for commands, executes those commands on a mobile device, and responds with an HTTP response representing the result of the command execution. 
+<b>ImperiusGeorge</b> proxies commands to a UIAutomator test case running on the device. <a href="https://google.github.io/android-testing-support-library/docs/uiautomator/">UIAutomator</a> is Android’s native end-to-end automation framework which supports running test cases directly in to the device.
+You can get more information about how ImperiusGeorge works <a href="https://github.com/lookout/ImperiusGeorge">here</a>.</p>
+
+<p class="pep">This sequence diagram shows how <b>ImperiusAutoIt</b> interact with <b>adb</b>, <b>ImperiusGeorge</b> server and the <b>Android device</b>.</p>
+<p class="pep"><img class="gif" src="images/flow.png" alt=""></p>
+<p class="pep"><b class="lil">Android Debug Bridge (adb) UDF</b><br/>
+The <b>adb</b> is a versatile command line tool that lets you communicate with an emulator instance or connected Android device.
+<b>Imperius AutoIt</b> has an Android UDF based upon this <a href="https://www.autoitscript.com/forum/topic/160936-android-udf/"> UDF.</a>
+This UDF is mainly targeted to communicate with Android devices in an automated fashion, such as in automated testing. An ADB client implemented in pure AutoIt is coming for the next release of <b>Imperuis AutoIt</b>. Check <a href="https://events.linuxfoundation.org/images/stories/pdf/lf_abs12_kobayashi.pdf">this</a> great documentation about how adb works.</p>
+
+<h3 align="left"> A more complex example</h3><hr>
+<p class="pep">This test show the <b>Page Object</b> pattern in order to minimize code duplication, make tests more readable, reduce the cost of modification, and improve maintainability. <a href="http://martinfowler.com/bliki/PageObject.html">Page Object</a> is an automation pattern commonly used in automation. It is used to mitigate the fact that ent-to-end automation tests are often involved in races with the App Under Test they are testing.</p>
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+#include &lt;dashboardScreen.au3&gt;
+#include &lt;inputsScreen.au3&gt;
+
+;Application Under Test data.
+Local $sAUTPath = "ImperiusGeorge.apk"
+Local $sPackage = "appinventor.ai_henrytejera.ImperiusGeorge"
+Local $sActivity = ".Screen1"
+
+;Local $sDeviceId = "" If multiple emulator/device instances are running, you must specify a serial device id.
+Local $oImperius = ImperiusServer("127.0.0.1", 3007)
+Local $oLogger = $oImperius.getLogger()
+Local $oDevice = $oImperius.getDevice()
+$oImperius.start() ;Start the ImperiusGeorge server on the device.
+
+;Install the application under test through the ADB client.
+$oImperius.getAdb().install($sAUTPath)
+$oDevice.startActivity($sPackage, $sActivity)
+
+Local $oDashboardScreen = DashboardScreen($oDevice)
+$oDashboardScreen.waitForScreen()
+Local $oInputsScreen = $oDashboardScreen.pressInputsScreen()
+
+With $oInputsScreen
+	.writeName("Imperius")
+	.writePassword("Password")
+	.pressAdd()
+	.waitForReady()
+	.back()
+EndWith
+
+$oDevice.clearPackage($sPackage)
+$oImperius.getAdb().uninstall($sPackage)
+
+$oImperius.stop()
+$oImperius = 0 
+</code></pre></div><br/>
+<p class="pep"><b class="lil"> Page Object </b><br/>
+The Page Object pattern intends creating an object for each screen of the App Under Test. By following this pattern a layer of separation between the test code and technical implementation is created.<br/>
+The <b >inputsScreen</b> look like this:
+<p class="pep"><img class="img" src="images/inputscreen.jpg" alt=""></p>
+<p class="pep">and the code look like this:</p>
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+;Function: InputsScreen
+;
+;Parameters:
+;	$oDevice- Object. An UiDevice instance.
+;
+;Returns:
+;   Object. An InputsScreen instance.
+Func InputsScreen($oDevice)
+	Local $oClassObject = _AutoItObject_Class()
+	$oClassObject.Create()
+
+	;Methods
+	With $oClassObject
+		.AddMethod("writeName", "_WriteName")
+		.AddMethod("writePassword", "_WritePassword")
+		.AddMethod("pressAdd", "_PressAdd")
+		.AddMethod("back", "_Back")
+		.AddMethod("waitForReady", "_WaitForReady")
+	EndWith
+
+	;Properties
+	With $oClassObject
+		.AddProperty("oDevice", $ELSCOPE_PRIVATE, $oDevice)
+		.AddProperty("inputName", $ELSCOPE_PRIVATE, 0)
+		.AddProperty("inputPassword", $ELSCOPE_PRIVATE, 1)
+		.AddProperty("buttonAdd", $ELSCOPE_PRIVATE, "Add")
+		.AddProperty("buttonBack", $ELSCOPE_PRIVATE, "Back")
+		.AddProperty("textReady", $ELSCOPE_PRIVATE, "Ready")
+	EndWith
+
+	Return $oClassObject.Object
+EndFunc   ;==>InputsScreen
+
+#Region Methods
+;Function: _WriteName
+;Enter the given text in the "Name" input.
+;
+;Parameters:
+;   $oSelf - Object reference.
+;	$sName - String. The name.
+Func _WriteName($oSelf, $sName)
+	$oSelf.oDevice.enterText($oSelf.inputName, $sName)
+EndFunc   ;==>_WriteName
+
+;Function: _WritePassword
+;Enter the given text in the "Password" input.
+;
+;Parameters:
+;   $oSelf - Object reference.
+;	$sPassword - String. The password.
+Func _WritePassword($oSelf, $sPassword)
+	$oSelf.oDevice.enterText($oSelf.inputPassword, $sPassword)
+EndFunc   ;==>_WritePassword
+
+;Function: _PressAdd
+;Presses the Add button.
+;
+;Parameters:
+;   $oSelf - Object reference.
+Func _PressAdd($oSelf)
+	$oSelf.oDevice.click($oSelf.buttonAdd)
+EndFunc   ;==>_PressAdd
+
+;Function: _Back
+;Presses the Back button.
+;
+;Parameters:
+;   $oSelf - Object reference.
+;
+;Returns:
+;	Object. A DashboardScreen instance.
+Func _Back($oSelf)
+	$oSelf.oDevice.click($oSelf.buttonBack)
+	Return DashboardScreen($oSelf.oDevice)
+EndFunc   ;==>_Back
+
+;Function: _WaitForReady
+;
+;Parameters:
+;   $oSelf - Object reference.
+Func _WaitForReady($oSelf)
+	$oSelf.oDevice.waitForTextExist($oSelf.textReady)
+EndFunc   ;==>_WaitForReady
+#EndRegion Methods
+</code></pre></div><br/>
+<h3 align="left"> Logging</h3><hr>
+<p class="pep"><b>ImperiusAutoIt</b> has a simple logger UDF based upon this <a href="https://www.autoitscript.com/forum/topic/163508-simple-logging-udf-logau3-based-on-log4j-nlog">UDF</a>. Extensive logging can help you get to the bottom of execution issues, especially in circumstances where additional information is hard to get.<br/>
+ Logger exposes six log levels: <b>TRACE</b>, <b>DEBUG</b> , <b>INFO</b>, <b>WARNING</b> , <b>ERROR</b> and <b>FATAL</b>.</b><br/>
+The default logging level is <b>INFO</b>. This means that only log entries with the logging level <b>INFO</b> and higher are output.
+
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+Local $oLogger = Logger()
+$oLogger.trace("TRACE")
+$oLogger.debug("DEBUG")
+$oLogger.info("INFO")
+$oLogger.warn("WARN")
+$oLogger.error("ERROR")
+$oLogger.fatal("FATAL")
+
+$oLogger.setLevel($LOG_WARN);If you want to change the logging level, set the new level equivalent to the level you want to log.
+$oLogger.info("INFO")
+$oLogger.warn("WARNW")
+
+Local $sDeviceId = "12345"
+Local $oImperius = ImperiusServer("127.0.0.1", 3007, $sDeviceId)
+Local $oLogger2 = $oImperius.getLogger() ;Gets the logger object from ImperiusServer.
+$oLogger2.info("INFO")
+
+Local $oLogger3 = Logger("MyFile.log")
+$oLogger3.info("INFO")
+</code></pre></div><br/>
+<h3 align="left"> Basic Usages</h3><hr>
+<p class="pep">This section show the normal actions of the device through some simple examples. This section is light on details, you can find a more detailed explanation about each function by reading the <a href="docs/index.html">API documentation</a>. <br/>
+<b class="lil"> Retrieve the device info </b></p>
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+;Local $sDeviceId = "" If multiple emulator/device instances are running, you must specify a serial device id.
+Local $oImperius = ImperiusServer("127.0.0.1", 3007)
+Local $oLogger = $oImperius.getLogger()
+Local $oDevice = $oImperius.getDevice()
+$oImperius.start() ;Start the ImperiusGeorge server on the device.
+
+$oLogger.info("Dump: " & $oDevice.getDump() )
+$oLogger.info("Top Activity: " & $oDevice.getCurrentTopActivity())
+$oLogger.info("Activity Name: " & $oDevice.getActivityName())
+$oLogger.info("Device Name: " & $oDevice.getDeviceName())
+$oLogger.info("Device Version: " & $oDevice.getDeviceVersion())
+$oLogger.info("Device Manufacturer: " & $oDevice.getDeviceManufacturer())
+$oLogger.info("Device Model: " & $oDevice.getDeviceModel())
+$oLogger.info("Packages: " & $oDevice.getPackages()[0])
+$oDevice.getScreenshot("screen.png")
+
+$oImperius.stop()
+$oImperius = 0
+</code></pre></div><br/>
+
+<p class="pep"><b class="lil">Press hard/soft key</b><br/>
+You can find all key code definitions at <a href="">android.keys.constants.au3</a>.</p>
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+;Local $sDeviceId = "" If multiple emulator/device instances are running, you must specify a serial device id.
+Local $oImperius = ImperiusServer("127.0.0.1", 3007)
+Local $oLogger = $oImperius.getLogger()
+Local $oDevice = $oImperius.getDevice()
+$oImperius.start() ;Start the ImperiusGeorge server on the device.
+
+With $oDevice
+	.pressBack()
+	.pressHome()
+	.pressTab()
+	.pressAppMenu()
+	.pressEnter()
+	.sendKeyEvents($KEYCODE_CAMERA)
+EndWith
+
+$oImperius.stop()
+$oImperius = 0
+</code></pre></div><br/>
+<h3 align="left"> Micro - The AutoIt Unit Testing Framework</h3><hr>
+<p class="pep"><a herf="https://github.com/AutoItMicro/MicroUnitTestingFramework">Micro</a> is a <a href="https://en.wikipedia.org/wiki/XUnit">Unit Testing Framework</a> with a focus on being easy to use.  It allows you to write test functions and test suites. A wide range of assertions are supported.</p>
+
+<p class="pep"><b class="lil">This is a very simple test that use Micro Unit Testing Framework.</b></p>
+<div class="cod">
+<pre><code class="autoit">#include &lt;imperius.au3&gt;
+
+#Region AUTData
+Local $sAUTPath = "ImperiusGeorge.apk"
+Local $sPackage = "appinventor.ai_henrytejera.ImperiusGeorge"
+Local $sActivity = ".Screen1"
+#EndRegion AUTData
+
+#Region BeforeAfter
+Func BeforeSuite($oServer, $sAppPath, $sPackage)
+	Local $oAdb = $oServer.getAdb()
+	With $oAdb
+		.uninstall($sPackage)
+		.install($sAppPath)
+	EndWith
+EndFunc   ;==>BeforeSuite
+#EndRegion BeforeAfter
+
+#Region Suite
+Local $oImperius = ImperiusServer("127.0.0.1", 3007)
+Local $oDevice = $oImperius.getDevice()
+$oImperius.start()
+BeforeSuite($oImperius, $sAUTPath, $sPackage)
+Local $oTestSuite = newTestSuite("Suite")
+$oTestSuite.addTest(TestInputScreen($oDevice))
+$oTestSuite.finish()
+$oImperius.stop()
+$oImperius = 0
+#EndRegion Suite
+
+#Region Tests
+Func TestInputScreen($oDevice)
+	Local $oTest = newTest("Test InputScreen")
+	Local $sExpected = "Ready"
+	With $oDevice
+		.startActivity($sPackage, $sActivity)
+		.waitForTextExist("AutoIt client")
+		.clickAndWait("Inputs Screen")
+		.enterText("0", "Imperius")
+		.enterText("1", "Password")
+		.click("Add")
+		.getScreenshot("InputScreen.png")
+	EndWith
+	$oTest.assertTrue("Assert that the [" & $sExpected & "] text is present on the screen", $oDevice.waitForTextExist($sExpected))
+	Return $oTest
+EndFunc   ;==>TestInputScreen
+#EndRegion Tests
+</code></pre></div><br/>
+<p class="pep">This test generate this result report on STDOUT. You always have the name of the function being executed
+a report at the end, with number of executed test and number of errors (if any).</p>
+<div class="cod">
+<pre><code class="autoit">(1) Test InputScreen
++	PASS	Assert that the [Ready] text is present on the screen
+</code></pre></div><br/>
+				  </div>
+            </section>
+
+	   <!-- API Docs -->
+            <section id="api" class="three">
+                <div class="container">
+                    <header>
+                        <h2>API Docs</h2>
+                    </header>
+<p class="pep"><b>ImperiusAutoIt</b> <a href="docs/index.html">API documentation</a> is build with <a href="http://www.naturaldocs.org">​Natural Docs</a>. <b>Natural Docs</b> is an open-source documentation generator for multiple programming languages. <b>Natural Docs</b> scans your code and builds high-quality HTML documentation from it.<p>
+              </div>
+            </section>
+
+            <!-- Contributing-->
+            <section id="contributing" class="three">
+                <div class="container">
+                    <header>
+                        <h2>Contribution Guidelines</h2>
+                    </header>
+<p class="pep">You may contribute to <b>Imperius AutoIt</b> by reporting bugs, fixing reported bugs or developing new features.</p>
+<h3 align="left">Learning AutoIt</h3><hr>
+<p class="pep">If you are entirely new to <b>AutoIt</b>, you may want to learn a bit about the language. The default source of information about the language for <b>AutoIt</b> newcomers is the oficial <a href="https://www.autoitscript.com/site/">AutoIt site</a>. Once you have grasped the basics, you may want to familiarize yourself also with <a href="
+https://www.autoitscript.com/forum/topic/110379-autoitobject-udf/">AutoItObject</a>, the UDF that <b>ImperiusAutoIt</b> is built on.</p>
+<h3 align="left">Report a Bug or feature request</h3><hr>
+<p class="pep">Bugs or feature requests should be reported using <a href="https://github.com/ohtejera/ImperiusAutoIt/issues">GitHub issues</a>. Some issues on github are marked with label <i>enhancement</i>. Feel free to pick up such tasks and implement them.<p>
+<h3 align="left">Code Style</h3><hr>
+<p class="pep">Here are the highlights for what we expect in the <b>ImperiusAutoIt</b> code:</p>
+<ol>
+<li><b class="lil">1. </b>Be tidied. Just hit <b>Ctrl+T</b> from <a href="https://www.autoitscript.com/site/autoit-script-editor/downloads/">SciTE</a>.</li>
+<li><b class="lil">2. </b>Pass <b>Au3Check</b> with no errors.</li>
+<li><b class="lil">3. </b>After the dollar sign <code>(“$”)</code>, from which the declaration of a <a href="https://www.autoitscript.com/wiki/UDF-spec#Variables">variable starts</a>, there must be a symbol or a set of symbols that defines what type of data it will contain.</li>
+</ol>
+<p class="pep"><b class="lil">Comments</b></p>
+<ol>
+<li><b class="lil">1. </b>Comments should be valid US-English sentences: they should start with a capital letter and end with appropriate punctuation.</li>
+<li><b class="lil">2. </b>The specification of a field or member should be documented using this specification in order to generate documentation through <b>Natural Docs</b>.</li>
+</ol>
+
+<p class="pep"><b>Natural Docs</b> has two files called <a href="http://www.naturaldocs.org/customizinglanguages.html">Languages.txt</a> one in its Config directory, and one in your project directory.  These control the language, index prefix, and prototype features of Natural Docs. Copy the AutoIt comments format specification use in this project into your <b>Languages.txt</b></p>
+<div class="cod">
+<pre><code class="bash">Language: AutoIt
+
+   Extension: au3
+   Line Comment: ;
+   Enum Values: Under type
+   Function Prototype Ender: \n
+   Variable Prototype Enders: \n =
+   Line Extender: _
+</code></pre></div><br/>
+
+<p class="pep">Here’s a quick example of how to document your code for Natural Docs:</p>
+<div class="cod">
+<pre><code class="autoit">;Function: _Adb_Install
+;Pushes an Android application (specified as a full path to an .apk file) to an emulator/device.
+;
+;Parameters:
+;   $oSelf - Object reference.
+;	$sFilePath - String. The full path to the .apk file.
+;	$iMode - String. 1=Install on Internal Storage  2=Install application on sdcard. Default is 1.
+;	$bReinstall - Boolean. True = Install on Internal Storage. Default is False.
+;
+;Returns:
+;  Boolean Success: True Failure: False.
+</code></pre></div><br/>
+<h3 align="left">Development Workflow</h3><hr>
+<p class="pep">You can get <b>ImperiusAutoIt</b> by cloning the project from <a href="https://github.com/ohtejera/ImperiusAutoIt.git">GitHub</a>. You need add Micro as a submodule:</p>
+<div class="cod">
+<pre><code class="bash">cd imperius/lib/vendor
+git submodule add git://github.com/AutoItMicro/MicroUnitTestingFramework.git micro
+git submodule update --init --recursive
+</code></pre></div><br/>
+<p class="pep"><b class="lil">Running Tests</b></p>
+<p class="pep"><b>ImperiusAutoIt</b> tests use <b>Micro</b> framework and are under the <i>test<i> subdirectory. </p>
+                    </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Copyright -->
+            <ul class="copyright">
+                <li><b>ImperiusAutoit</b> is free. You can redistribute it and/or modify it under the terms of the <a href="http://www.wtfpl.net/">Do What The Fuck You Want To</a> license.</li>
+                <li>Site design by:
+                    <a href="http://html5up.net">HTML5 UP</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollzer.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script src="assets/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+        <!--[if lte IE 8]>
+            <script src="assets/js/ie/respond.min.js"></script>
+        <![endif]-->
+        <script src="assets/js/main.js"></script>
+    
+
+</body></html>
