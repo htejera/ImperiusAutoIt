@@ -2,6 +2,8 @@
 
 # Imperius AutoIt
 
+[![Build status](https://img.shields.io/appveyor/ci/ohtejera/imperiusautoit.svg?style=flat-square)](https://ci.appveyor.com/project/ohtejera/imperiusautoit)
+
 **Imperius AutoIt** is an [ImperiusGeorge](https://github.com/lookout/ImperiusGeorge) client for mobile test automation that support native Android apps. Tests are written using [AutoIt](https://www.autoitscript.com/site/) , that's it!
 
 
