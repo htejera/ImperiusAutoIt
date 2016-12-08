@@ -5,9 +5,6 @@
 
 Global Enum $IP, $PORT, $DEVICEID, $SERVERPATH, $TIMEOUT
 Global $aParams[5] = ["127.0.0.1", 3007, "123456", "C:\folder\" & $IMPERIUSSERVERJAR, 15000]
-Global $sDefaultServerPath = @ScriptDir & "\" & $IMPERIUSSERVERJAR
-EnvSet("IMPERIUS",@ScriptDir)
-EnvUpdate()
 
 #Region Suite
 Local $oTestSuite = newTestSuite("Imperius")
@@ -40,13 +37,12 @@ Func TestImperiusServerGetters()
 	EndWith
 	$oImperius = 0
 
-	Local $oImperiusDefault = ImperiusServer()
+	Local $oImperiusDefault = ImperiusServer(Default, Default, Default, $aParams[$SERVERPATH, Default)
 	With $oTest
 		.assertEquals(StringFormat($sMsg, "getIP", "localhost"), $oImperiusDefault.getIP(), "localhost")
 		.assertEquals(StringFormat($sMsg, "getPort", 7120), $oImperiusDefault.getPort(), 7120)
 		.assertEquals(StringFormat($sMsg, "getDeviceID", ""), "", $oImperiusDefault.getDeviceID())
 		.assertEquals(StringFormat($sMsg, "getTimeout", 30000), $oImperiusDefault.getTimeout(), 30000)
-		.assertEquals(StringFormat($sMsg, "getServerPath", $sDefaultServerPath), $oImperiusDefault.getServerPath(), $sDefaultServerPath)
 	EndWith
 	$oImperiusDefault = 0
 	Return $oTest
