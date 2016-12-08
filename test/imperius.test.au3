@@ -37,7 +37,7 @@ Func TestImperiusServerGetters()
 	EndWith
 	$oImperius = 0
 
-	Local $oImperiusDefault = ImperiusServer(Default, Default, Default, $aParams[$SERVERPATH, Default)
+	Local $oImperiusDefault = ImperiusServer(Default, Default, Default, $aParams[$SERVERPATH], Default)
 	With $oTest
 		.assertEquals(StringFormat($sMsg, "getIP", "localhost"), $oImperiusDefault.getIP(), "localhost")
 		.assertEquals(StringFormat($sMsg, "getPort", 7120), $oImperiusDefault.getPort(), 7120)
@@ -52,7 +52,7 @@ EndFunc   ;==>TestImperiusServerGetters
 Func TestUIDeviceGetters()
 	Local $sMsg = "This [%s] getter should be equal to [%s]"
 	Local $oTest = newTest("UiDeviceGetters")
-	Local $oImperius = ImperiusServer(Default, Default, $aParams[$DEVICEID])
+	Local $oImperius = ImperiusServer(Default, Default, $aParams[$DEVICEID], $aParams[$SERVERPATH])
 	Local $oDevice = $oImperius.getDevice()
 
 	With $oTest
@@ -94,7 +94,7 @@ Func TestLoggerFile()
 	Local Const $LEVELSTRING[6] = ["TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL"]
 	Local $sFileLog = "log.txt"
 	Local $sDefaultLevel = "INFO"
-	Local $oTest = newTest("Logger")
+	Local $oTest = newTest("LoggerFile")
 	Local $oLogger = Logger($sFileLog)
 
 	With $oLogger
