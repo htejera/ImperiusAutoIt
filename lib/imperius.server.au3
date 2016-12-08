@@ -12,7 +12,7 @@ Global Const $IMPERIUSSERVERJAR = "imperiusserver.1.0.1.jar"
 ;	$sIP - String. The Imperius server IP. Default is locahost.
 ;	$iPort - Int.  The Imperius server port. Default is 7120.
 ;	$sDeviceId - String. The serial deviceID. Can be empty if only have one device. Deafuls is "".
-;	$sLocalServerPath - String. The full path to the test.jar. Default uses the IMPERIUS environment variable.
+;	$sLocalServerPath - String. The full path to the imperiusserver.jar. Default uses the IMPERIUS environment variable.
 ;	$iTimeout - Int. Timeout (miliseconds). Default is 30000.
 ;
 ;Returns:
