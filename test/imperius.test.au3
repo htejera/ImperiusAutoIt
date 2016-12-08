@@ -5,6 +5,9 @@
 
 Global Enum $IP, $PORT, $DEVICEID, $SERVERPATH, $TIMEOUT
 Global $aParams[5] = ["127.0.0.1", 3007, "123456", "C:\folder\" & $IMPERIUSSERVERJAR, 15000]
+Global $sDefaultServerPath = @ScriptDir & "\" & $IMPERIUSSERVERJAR
+EnvSet("IMPERIUS",@ScriptDir)
+EnvUpdate()
 
 #Region Suite
 Local $oTestSuite = newTestSuite("Imperius")
@@ -20,7 +23,7 @@ $oTestSuite.finish()
 Func TestImperiusServerGetters()
 	Local $sMsg = "This [%s] getter should be equal to [%s]"
 	Local $sURL = 'http://' & $aParams[$IP] & ':' & $aParams[$PORT] & '/'
-	Local $sDefaultServerPath = @ScriptDir & "\" & $IMPERIUSSERVERJAR
+
 	Local $oTest = newTest("ImperiusServerGetters")
 	Local $oImperius = ImperiusServer($aParams[$IP], $aParams[$PORT], $aParams[$DEVICEID], $aParams[$SERVERPATH], $aParams[$TIMEOUT])
 
