@@ -12,18 +12,29 @@ Global Const $IMPERIUSSERVERJAR = "imperiusserver.1.0.1.jar"
 ;	$sIP - String. The Imperius server IP. Default is locahost.
 ;	$iPort - Int.  The Imperius server port. Default is 7120.
 ;	$sDeviceId - String. The serial deviceID. Can be empty if only have one device. Deafuls is "".
-;	$sLocalServerPath - String. The full path to the test.jar. Default is @ScriptDir & "\imperiusserver.jar".
+;	$sLocalServerPath - String. The full path to the test.jar. Default uses the IMPERIUS environment variable.
 ;	$iTimeout - Int. Timeout (miliseconds). Default is 30000.
 ;
 ;Returns:
 ;   Object. An ImperiusServer instance.
-Func ImperiusServer($sIP = "localhost", $iPort = 7120, $sDeviceID = "", $sLocalServerPath = @ScriptDir & "\" & $IMPERIUSSERVERJAR, $iTimeout = 30000)
+Func ImperiusServer($sIP = "localhost", $iPort = 7120, $sDeviceID = "", $sLocalServerPath = "", $iTimeout = 30000)
 	Local $oClassObject = _AutoItObject_Class()
 	$oClassObject.Create()
 	Local $oDevice = ""
 	Local $oLogger = Logger()
 	$oLogger.setLevel($LOG_INFO)
 	Local $oAdb = Adb($sDeviceID, $oLogger)
+
+	If($sLocalServerPath == "") Then
+		$sLocalServerPath = EnvGet("IMPERIUS")
+		If ($sLocalServerPath == "") Then
+			MsgBox(16, "Error", "Error: IMPERIUS environment variable is not set.")
+			Exit
+		EndIf
+	EndIf
+	$sLocalServerPath = $sLocalServerPath & "\" & $IMPERIUSSERVERJAR
+	$oLogger.info("Imperius Server")
+	$oLogger.info(StringFormat("IP: %s Port: %s DeviceID: %s Server: %s", $sIP,$iPort,$sDeviceID, $sLocalServerPath))
 
 	;Methods
 	With $oClassObject
