@@ -4,7 +4,7 @@
 #include <../imperius.au3>
 
 Global Enum $IP, $PORT, $DEVICEID, $SERVERPATH, $TIMEOUT
-Global $aParams[5] = ["127.0.0.1", 3007, "123456", "C:\folder\" & $IMPERIUSSERVERJAR, 15000]
+Global $aParams[5] = ["127.0.0.1", 3007, "123456", "C:\folder", 15000]
 
 #Region Suite
 Local $oTestSuite = newTestSuite("Imperius")
@@ -27,7 +27,7 @@ Func TestImperiusServerGetters()
 	With $oTest
 		.assertEquals(StringFormat($sMsg, "getIP", $aParams[$IP]), $oImperius.getIP(), $aParams[$IP])
 		.assertEquals(StringFormat($sMsg, "getPort", $aParams[$PORT]), $oImperius.getPort(), $aParams[$PORT])
-		.assertEquals(StringFormat($sMsg, "getServerPath", $aParams[$SERVERPATH]), $oImperius.getServerPath(), $aParams[$SERVERPATH])
+		.assertEquals(StringFormat($sMsg, "getServerPath", $aParams[$SERVERPATH]), $oImperius.getServerPath(), $aParams[$SERVERPATH]  & "\" & $IMPERIUSSERVERJAR)
 		.assertEquals(StringFormat($sMsg, "getTimeout", $aParams[$TIMEOUT]), $oImperius.getTimeout(), $aParams[$TIMEOUT])
 		.assertEquals(StringFormat($sMsg, "getUrl", $sURL), $sURL, $oImperius.getUrl())
 		.assertEquals(StringFormat($sMsg, "getDeviceID", $aParams[$DEVICEID]), $aParams[$DEVICEID], $oImperius.getDeviceID())
@@ -36,15 +36,6 @@ Func TestImperiusServerGetters()
 		.assertTrue(StringFormat($sMsg, "getLogger", "Logger"), IsObj($oImperius.getLogger()))
 	EndWith
 	$oImperius = 0
-
-	Local $oImperiusDefault = ImperiusServer(Default, Default, Default, $aParams[$SERVERPATH], Default)
-	With $oTest
-		.assertEquals(StringFormat($sMsg, "getIP", "localhost"), $oImperiusDefault.getIP(), "localhost")
-		.assertEquals(StringFormat($sMsg, "getPort", 7120), $oImperiusDefault.getPort(), 7120)
-		.assertEquals(StringFormat($sMsg, "getDeviceID", ""), "", $oImperiusDefault.getDeviceID())
-		.assertEquals(StringFormat($sMsg, "getTimeout", 30000), $oImperiusDefault.getTimeout(), 30000)
-	EndWith
-	$oImperiusDefault = 0
 	Return $oTest
 EndFunc   ;==>TestImperiusServerGetters
 
