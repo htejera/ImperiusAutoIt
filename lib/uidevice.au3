@@ -729,7 +729,7 @@ EndFunc   ;==>_Stop
 #EndRegion UtilMethods
 
 #Region ParsersMethods
-;TODO: Add Regular expresiones
+;TODO: Add regex.
 
 ;Function:  __ParserPackages
 ;Parse the _GetPackages return.
